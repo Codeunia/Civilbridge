@@ -1,62 +1,79 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const reportForm = document.getElementById("reportForm");
-  const reportList = document.getElementById("reportList");
 
-  // Submit form
-  reportForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const title = document.getElementById("title").value.trim();
-    const description = document.getElementById("description").value.trim();
-    const location = document.getElementById("location").value.trim();
+function showForm() {
+  document.getElementById('hero').classList.add('slide-left');
+  setTimeout(() => {
+    document.getElementById('formBox').classList.add('show');
+    showLoginForm(); // Show login by default
+  }, 600);
+}
 
-    if (!title || !description || !location) {
-      alert("Please fill in all fields.");
-      return;
-    }
+function showRegisterForm() {
+  document.getElementById("loginForm").style.display = "none";
+  const reg = document.getElementById("registerForm");
+  reg.style.display = "block";
+  reg.classList.add("register-slide-in");
+}
 
-    try {
-      const res = await fetch("/report", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, description, location }),
-      });
-      const data = await res.json();
-      if (data.message) {
-        alert(data.message);
-        reportForm.reset();
-        loadReports();
-      } else {
-        alert("Error: " + (data.error || "Unknown"));
-      }
-    } catch (err) {
-      alert("Server error. Please try again later.");
-    }
-  });
+function showLoginForm() {
+  document.getElementById("registerForm").style.display = "none";
+  document.getElementById("loginForm").style.display = "block";
+}
 
-  // Load reports
-  async function loadReports() {
-    reportList.innerHTML = "";
-    try {
-      const res = await fetch("/reports");
-      const reports = await res.json();
-      if (Array.isArray(reports)) {
-        reports.reverse().forEach((report) => {
-          const div = document.createElement("div");
-          div.className = "card";
-          div.innerHTML = `
-            <h3>${report.title}</h3>
-            <p>${report.description}</p>
-            <span><strong>Location:</strong> ${report.location}</span>
-            <span><strong>Date:</strong> ${new Date(report.date).toLocaleString()}</span>
-          `;
-          reportList.appendChild(div);
-        });
-      }
-    } catch (err) {
-      console.error("Failed to fetch reports:", err);
-    }
+async function submitRegister() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const password = document.getElementById("passwordReg").value.trim();
+
+  if (!name || !email || !phone || !address || !password) {
+    alert("Please fill in all fields.");
+    return;
   }
 
-  // Initial load
-  loadReports();
-});
+  try {
+    const response = await fetch("http://localhost:5004/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, phone, address, password })
+    });
+
+    const result = await response.json();
+    alert(result.message || "Registered successfully!");
+    showLoginForm();
+  } catch (err) {
+    console.error(err);
+    alert("Registration failed: " + err.message);
+  }
+}
+
+async function submitLogin() {
+  const userInput = document.getElementById("Username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!userInput || !password) {
+    alert("Please enter login credentials.");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:5004/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: userInput, password })
+    });
+
+    const result = await response.json();
+
+    if (result.message === 'Login successful') {
+      alert("Login successful!");
+      // Optional: window.location.href = "/dashboard.html";
+    } else {
+      alert(result.message || "Login failed.");
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Login failed: " + err.message);
+  }
+}
