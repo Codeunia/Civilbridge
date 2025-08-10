@@ -1,0 +1,113 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover;
+  margin: 0;
+  color: white;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover { color: #ff9800; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+ 
+}
+
+/* Stats */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.stat-card {
+  background: rgba(255,255,255,0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 150px;
+}
+
+/* Problems */
+.problems-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.problems-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 85px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.problem-card {
+  min-width: 250px;
+  flex: 0 0 auto;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.problem-card:hover {
+  transform: scale(1.05);
+}
+
+.problems-carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner look */
+}
+
+/* Report Section */
+.report-section {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.15);
+  border-radius: 15px;
+}
+.report-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.report-section input, .report-section textarea, .report-section button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+}
+.report-section input, .report-section textarea {
+  background: rgba(255,255,255,0.8);
+  color: black;
+}
+.report-section button {
+  background: #ff9800;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.report-section button:hover { background: #e68900; }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civil Bridge Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>Civil Bridge</h1>
+    <ul>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#problems">Nearby Problems</a></li>
+      <li><a href="#report-section">Report Problem</a></li>
+      
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h2>Welcome to Civil Bridge</h2>
+    <p>Connecting citizens with local authorities to solve civic issues faster.</p>
+  </header>
+
+  <!-- Quick Stats -->
+  <section id="stats" class="stats-section">
+    <div class="stat-card">
+      <h3>120+</h3>
+      <p>Reports This Month</p>
+    </div>
+    <div class="stat-card">
+      <h3>95%</h3>
+      <p>Resolved Issues</p>
+    </div>
+    <div class="stat-card">
+      <h3>48 hrs</h3>
+      <p>Avg. Response Time</p>
+    </div>
+  </section>
+
+  <!-- Nearby Problems Carousel -->
+<section id="problems" class="problems-section">
+  <h2>Nearby Reported Problems</h2>
+  <div class="problems-carousel">
+    <div class="problem-card">
+      <h4>Pothole in Main Street</h4>
+      <p>Location: Jankipuram </p>
+    </div>
+    <div class="problem-card">
+      <h4>Broken Streetlight</h4>
+      <p>Location: hazratganj</p>
+    </div>
+    <div class="problem-card">
+      <h4>Garbage Overflow</h4>
+      <p>Location: kursi road</p>
+    </div>
+    <div class="problem-card">
+      <h4>Water Leakage</h4>
+      <p>Location: Alambagh</p>
+
+  </div>
+</section>
+
+
+  <!-- Report Problem -->
+  <section id="report-section" class="report-section">
+    <h2>Report Your Problem</h2>
+    <form id="reportForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Your Phone" required>
+        <input type="text" placeholder="Location" required>
+      <input type="text" placeholder="Problem Title" required>
+      <textarea placeholder="Describe your problem" required></textarea>
+      <input type="file" required>
+      <button type="submit">Submit Report</button>
+    </form>
+  </section>
+
+ 
+
+  <script src="dashboard.js"></script>
+    <footer>
+        &copy; 2025 Civil Bridge | Built for a Better Tomorrow
+
+</body>
+</html>
