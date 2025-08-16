@@ -78,7 +78,7 @@ nav a:hover { color: #ff9800; }
 }
 
 .problems-carousel::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for cleaner look */
+  display: none; 
 }
 
 /* Report Section */
@@ -111,3 +111,4 @@ nav a:hover { color: #ff9800; }
   transition: background 0.3s ease;
 }
 .report-section button:hover { background: #e68900; }
+
