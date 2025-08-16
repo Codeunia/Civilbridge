@@ -5,7 +5,7 @@ const card = carousel.querySelector('.problem-card');
 const cardWidth = card.offsetWidth + 20; // card width + gap
 const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
 
-// Auto slide every 3 seconds
+
 setInterval(() => {
   scrollAmount += cardWidth;
   if(scrollAmount > maxScrollLeft) scrollAmount = 0;
@@ -16,7 +16,7 @@ setInterval(() => {
   });
 }, 3000);
 
-// Optional: Add basic touch swipe support
+
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -42,12 +42,4 @@ carousel.addEventListener('mousemove', (e) => {
   const walk = (startX - x); //scroll-fast
   carousel.scrollLeft = scrollLeft + walk;
 });
-document.getElementById('reportForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // prevent actual form submission
-  
-  // Show a custom alert popup
-  alert("Thank you for submitting your report! We will get back to you soon.");
 
-  // Redirect to login page (change URL if needed)
-  window.location.href = "index.html";
-});
