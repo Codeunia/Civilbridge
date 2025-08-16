@@ -11,3 +11,5 @@ Upon submitting a report, a custom-styled popup thanks the user for their submis
 Additionally, the dashboard includes a collapsible chat popup for quick AI-assisted communication, providing basic replies and support.
 
 Overall, the Civil Bridge Dashboard offers a clean, accessible, and engaging platform for civic issue reporting and community interaction.
+DEPLOYMENT LINK: 
+https://civilbridge-2025-internship.vercel.app/
