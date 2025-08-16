@@ -18,7 +18,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/civilbridge', {
 .then(() => console.log('✅ MongoDB connected to civilbridge'))
 .catch(err => console.error('❌ MongoDB connection error:', err));
 
-// Define Schema and Model for 'users' collection
+
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -52,7 +52,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// Login Route
+
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -73,7 +73,8 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Start the server
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
+
