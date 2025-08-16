@@ -8,10 +8,11 @@ function showRegisterForm() {
 
 function submitLogin() {
   alert("Login Successful!");
-  window.location.href = "dashboard.html"; // Redirect after login
+  window.location.href = "dashboard.html"; 
 }
 
 function submitRegister() {
   alert("Signup Successful!");
-  window.location.href = "dashboard.html"; // Redirect after signup
+  window.location.href = "dashboard.html"; 
 }
+
